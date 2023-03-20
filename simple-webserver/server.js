@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const { exec } = require('child_process')
 const app = express()
 const port = 3000
+const ip = '10.80.72.18'
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -33,6 +34,6 @@ app.options('/', (req, res) => {
   console.log('options')
 })
 
-app.listen(port, () => {
+app.listen(port, ip, () => {
   console.log(`Example app listening on port ${port}`)
 })
